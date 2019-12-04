@@ -77,23 +77,4 @@ public class Queue {
 			return null;
 		}
 	}
-
-	public static void main(String [] args) {
-
-		String [] days = {"Sunday", "Monday", "Tuesday", "Wednesday", 
-			"Thursday", "Friday", "Saturday"};
-
-		Queue queue = new Queue("dec04sa",
-				"qNk3t6ebSaa3gSOtHWFrZKvqYpFFIJAzRGZDL/SsL7H47hYVeHTtAe1bA78Xlkyo5++9uhcOZTdXG0ThvK8ShA==", "msgq", false);
-/*
-		for (String day : days) {
-			queue.add("Today is " + day);
-		}
-*/
-		System.out.println("Queue has:" + queue.size());
-
-		while (queue.size() > 0) {
-			System.out.println(queue.pop());
-		}
-	}
 }
