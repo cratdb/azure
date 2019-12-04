@@ -65,13 +65,11 @@ public class Queue {
 			return null;
 
 		try {
-			CloudQueueMessage msg = queue.peekMessage();
+			CloudQueueMessage msg = queue.retrieveMessage();
 			if (msg != null && remove) {
-				if (msg == null)
-					System.out.println("Its null");
 				queue.deleteMessage(msg);
 			}
-			return (msg == null) ? null : msg.toString();
+			return (msg == null) ? null : msg.getMessageContentAsString();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
